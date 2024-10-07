@@ -37,7 +37,7 @@ services:
     links:
       - mysql:mysql
     ports:
-      - "172.17.0.1:22811:80"
+      - "22811:80"
     environment:
       - PMA_HOST=mysql
       - PMA_PORT=3306
