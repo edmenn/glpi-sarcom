@@ -25,8 +25,8 @@ services:
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
       - ./storage/var/www/html/glpi/:/var/www/html/glpi
-      #- ./apache/php.ini:/etc/php/8.1/fpm/php.ini
-      - ./apache/php.ini:/etc/php/8.1/cli/php.ini
+      - ./apache/php.ini:/etc/php/8.1/fpm/php.ini
+      #- ./apache/php.ini:/etc/php/8.1/cli/php.ini
       #- ./apache/php.ini:/etc/php/8.1/apache2/php.ini 
     environment:
       - TIMEZONE=America/Asuncion
