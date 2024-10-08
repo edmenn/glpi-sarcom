@@ -16,7 +16,8 @@ services:
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
 
   glpi:
-    image: elestio/glpi:${SOFTWARE_VERSION_TAG}
+    build:
+      context: .   # Indica que Docker debe construir desde el Dockerfile en el directorio actual
     restart: always
     hostname: glpi
     ports:
