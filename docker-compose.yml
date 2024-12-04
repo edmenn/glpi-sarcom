@@ -14,6 +14,8 @@ services:
       - MYSQL_DATABASE=${MYSQL_DATABASE}
       - MYSQL_USER=${MYSQL_USER}
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+    networks:
+      - docker01-services
 
   glpi:
     build:
@@ -30,6 +32,8 @@ services:
       - ./storage/var/www/html/glpi/:/var/www/html/glpi
     environment:
       - TIMEZONE=America/Asuncion
+    networks:
+      - docker01-services
       
   pma:
     image: phpmyadmin
@@ -48,3 +52,9 @@ services:
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}  # Usa MYSQL_ROOT_PASSWORD
     depends_on:
       - mysql
+    networks:
+      - docker01-services
+      
+networks:
+  docker01-services:
+    external: true
