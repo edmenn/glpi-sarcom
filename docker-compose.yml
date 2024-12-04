@@ -48,7 +48,3 @@ services:
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}  # Usa MYSQL_ROOT_PASSWORD
     depends_on:
       - mysql
-  
-networks:
-  docker01-services:
-    external: true
